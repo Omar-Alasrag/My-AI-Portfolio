@@ -1,0 +1,1 @@
+I finetuned a DistilBERT model to perform the named entity recognition task using the CoNLL-2003 dataset. I implemented a custom alignment to align labels even when the tokenizer split words into multiple subtokens.

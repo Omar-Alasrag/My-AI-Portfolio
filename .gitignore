@@ -1,0 +1,15 @@
+# Ignore specific folders
+dataset/
+datasets/
+img/
+images/
+*.csv
+*.json
+*.parquet
+*.zip
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.mp3
+*.mp4
