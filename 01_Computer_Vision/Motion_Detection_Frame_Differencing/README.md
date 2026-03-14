@@ -1,0 +1,1 @@
+Detect movement in video streams using frame differencing, thresholding, and contour detection.

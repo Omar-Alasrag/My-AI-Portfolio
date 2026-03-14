@@ -1,0 +1,1 @@
+Real-time vehicle counting system using background subtraction and Euclidean distance tracking.

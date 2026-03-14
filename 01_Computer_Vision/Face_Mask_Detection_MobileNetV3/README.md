@@ -1,0 +1,1 @@
+Image classification model for detecting face masks using MobileNetV3 and transfer learning.

@@ -1,0 +1,1 @@
+Automatic License Plate Recognition system using YOLO detection and OCR (Tesseract) for extracting vehicle numbers.

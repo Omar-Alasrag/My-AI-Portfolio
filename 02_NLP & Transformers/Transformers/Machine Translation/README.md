@@ -1,0 +1,1 @@
+I built a translation system using the Helsinki-NLP Opus model to convert English text into French. I implemented a standard Seq2Seq pipeline that includes custom data tokenization, SacreBLEU metric evaluation, and a prediction function for real-time translation.s

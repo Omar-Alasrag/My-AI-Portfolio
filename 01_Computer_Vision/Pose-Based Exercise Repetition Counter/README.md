@@ -1,0 +1,1 @@
+Real-time exercise repetition counter using pose estimation and joint angle calculation with MediaPipe.
