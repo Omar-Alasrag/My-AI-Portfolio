@@ -24,9 +24,20 @@ The focus of this portfolio is:
 ## Project Overview
 
 ### 01. Computer Vision
-- CNN training with data augmentation on CIFAR-10
-- Face recognition using classical OpenCV techniques
-- SSD-based object detection implementation
+#### Deep Learning & Real-Time Applications
+ - **Real-Time Vehicle Counting using YOLO and ByteTrack** – Multi-object tracking for real-time traffic monitoring.
+- **Automatic License Plate Recognition (ALPR) System** – YOLO-based detection + OCR text extraction.
+- **Face Mask Detection using MobileNetV3** – Transfer learning for real-time mask classification.
+- **CIFAR-10 CNN Image Classifier with Data Augmentation** – Multi-class image classification using CNNs.
+- **SSD Object Detection** – Single Shot Detector for general object detection tasks.
+#### Face & Pose Estimation
+- **Face Recognition using OpenCV** – Face identification and verification using classical feature extraction.
+- **Face Distance Estimation using Facial Landmarks** – Distance measurement between facial keypoints.
+- **Pose-Based Exercise Repetition Counter** – Keypoint detection to count exercise repetitions.
+#### Classical Computer Vision / Feature Engineering
+- **Feature Matching: ORB vs SIFT** – Comparing classical feature detectors for image matching.
+- **Motion Detection using Frame Differencing** – Real-time motion tracking in video frames.
+- **Vehicle Counting System** – Counting vehicles using classical CV approaches.
 
 ---
 
