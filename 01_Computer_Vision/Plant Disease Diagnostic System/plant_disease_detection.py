@@ -67,12 +67,12 @@ transform = T.Compose(
 )
 
 tr_dset = CustomDataset(
-    r"data\mask_dataset",
+    r"data\plant_disease_dataset",
     transform=transform,
 )
 
 test_dset = CustomDataset(
-    r"data\mask_dataset",
+    r"data\plant_disease_dataset",
     transform=transform,
 )
 
