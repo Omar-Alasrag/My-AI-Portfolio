@@ -1,0 +1,1 @@
+Developed a precision agriculture tool using Faster R-CNN / SSDLite (PyTorch) to detect and localize diseases in real-time.

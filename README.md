@@ -25,8 +25,11 @@ The focus of this portfolio is:
 
 ### 01. Computer Vision
 #### Deep Learning & Real-Time Applications
- - **Real-Time Vehicle Counting using YOLO and ByteTrack** – Multi-object tracking for real-time traffic monitoring.
+- **Real-Time Vehicle Counting using YOLO and ByteTrack** – Multi-object tracking for real-time traffic monitoring.
 - **Automatic License Plate Recognition (ALPR) System** – YOLO-based detection + OCR text extraction.
+- **Real-Time Vehicle Counting using YOLO and ByteTrack** – Multi-object tracking for real-time traffic monitoring.
+- **Automatic License Plate Recognition (ALPR) System** – YOLO-based detection + OCR text extraction
+- **Plant Disease Diagnostic System** – Real-time Detection with Faster R-CNN / SSDLite (PyTorch)
 - **Face Mask Detection using MobileNetV3** – Transfer learning for real-time mask classification.
 - **CIFAR-10 CNN Image Classifier with Data Augmentation** – Multi-class image classification using CNNs.
 - **SSD Object Detection** – Single Shot Detector for general object detection tasks.
