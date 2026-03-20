@@ -55,7 +55,7 @@ def masked_BCELoss(y_true, y_pred):
 
     bce = tf.keras.losses.binary_crossentropy(y_true, y_pred)
     return tf.reduce_sum(bce * mask) / (tf.reduce_sum(mask) + 1e-8)
-
+    
 autoencoder.compile(
     optimizer="adam",
     loss=masked_BCELoss
