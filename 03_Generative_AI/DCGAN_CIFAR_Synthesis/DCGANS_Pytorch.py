@@ -1,7 +1,3 @@
-
-# dataset link
-# https://www.kaggle.com/competitions/cifar-10/data
-
 import os
 import torch as pt
 from torch.nn import BCELoss
@@ -11,11 +7,8 @@ import torchvision.utils as vutils
 import torchvision.transforms as T
 
 
-
 transforms = T.Compose([T.Resize((64, 64)), T.ToTensor()])
-dset = tv.datasets.ImageFolder(
-    r"cifar10/train", transforms
-)
+dset = tv.datasets.ImageFolder(r"cifar10/train", transforms)
 dataloader = pt.utils.data.DataLoader(dset, batch_size=32, shuffle=True)
 
 device = pt.device("cuda" if pt.cuda.is_available() else "cpu")
@@ -75,7 +68,6 @@ optG = Adam(gnn.parameters(), lr=0.0002, betas=(0.5, 0.999))
 optD = Adam(dnn.parameters(), lr=0.0002, betas=(0.5, 0.999))
 
 
-
 criterien = BCELoss()
 for e in range(25):
     for i, (real, _) in enumerate(dataloader):
@@ -109,5 +101,3 @@ for e in range(25):
             os.makedirs("data", exist_ok=True)
             fake = gnn(noise)
             vutils.save_image(fake, f"data\\fake e={e}, i={i//100}.png", normalize=True)
-
-
