@@ -46,8 +46,6 @@ The focus of this portfolio is:
 
 ### 02. NLP & Transformers
 
-#### Sequence Models
-- BiLSTM encoder–decoder with attention for machine translation
 
 #### Transformers
 
@@ -67,7 +65,7 @@ The focus of this portfolio is:
 ---
 
 ### 03. Generative AI
-- DCGAN trained on CIFAR-10 for image generation
+- DCGAN trained on CIFAR-10 for image generation with Pytorch & Tensorflow
 
 ---
 
