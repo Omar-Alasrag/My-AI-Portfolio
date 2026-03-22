@@ -13,7 +13,6 @@ The focus of this portfolio is:
 ## Skills & Topics Covered
 
 - **CNNs & Computer Vision** → CIFAR-10, SSD Object Detection, Face Recognition  
-- **Sequence Models** → BiLSTM with Attention  
 - **Transformers (from scratch)** → Custom Transformer Seq2Seq (PyTorch)  
 - **NLP Fine-tuning** → NER, Textual Entailment (RTE), Sentiment Analysis, Translation  
 - **Classical ML** → Regression, Classification, Clustering, Association Rules  

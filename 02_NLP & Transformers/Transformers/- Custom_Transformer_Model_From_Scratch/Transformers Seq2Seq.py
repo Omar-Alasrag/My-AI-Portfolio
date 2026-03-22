@@ -283,7 +283,6 @@ def decode_batch(preds, labels):
     preds = preds.detach().cpu()
     labels = labels.detach().cpu()
 
-    # 🔥 FIX HERE
     labels = labels.clone()
     labels[labels == -100] = tokenizer.pad_token_id
 
@@ -381,7 +380,8 @@ def quick_test(sentence):
         decoder_input = torch.cat([decoder_input, next_token], dim=1)
 
     output_text = tokenizer.decode(decoder_input[0], skip_special_tokens=True)
-    # Encode safely for Windows console
+
+
     print("Input:", sentence)
     print("Output:", output_text.encode("utf-8", errors="replace").decode("utf-8"))
 
