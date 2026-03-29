@@ -1,4 +1,3 @@
-# %%
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
@@ -12,7 +11,6 @@ from torchmetrics.text import BLEUScore
 
 MAX_SEQ_LEN = 100
 
-# %%
 
 
 class PositionalEncoding(nn.Module):
@@ -29,8 +27,6 @@ class PositionalEncoding(nn.Module):
         return x + self.pe[: x.size(1)]
 
 
-# en_input
-# de_out
 class MHA(nn.Module):
     def __init__(self, d_model, n_heads, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -207,7 +203,6 @@ class Transformer(nn.Module):
         return output
 
 
-# %%
 
 
 dset_pd = pd.read_csv("ara.txt", sep="\t")
@@ -215,7 +210,6 @@ dset_english = dset_pd.iloc[:, 0].to_numpy().tolist()
 dset_arabic = dset_pd.iloc[:, 1].to_numpy().tolist()
 
 dset = Dataset.from_dict({"en": dset_english, "ar": dset_arabic})
-# %%
 
 tokenizer: PreTrainedTokenizer = AutoTokenizer.from_pretrained(
     "Helsinki-NLP/opus-mt-en-ar"
@@ -223,7 +217,7 @@ tokenizer: PreTrainedTokenizer = AutoTokenizer.from_pretrained(
 
 
 tokenizer.add_special_tokens({"bos_token": "<bos>"})
-# %%
+
 BOS_ID = tokenizer.bos_token_id
 
 
@@ -244,7 +238,6 @@ tokenized_dset = (
     .remove_columns(dset.column_names)
     .train_test_split(0.2)
 )
-# %%
 
 
 datacollator = DataCollatorForSeq2Seq(tokenizer)
@@ -258,7 +251,6 @@ val_loader = DataLoader(
 )
 
 
-# %%
 
 transformer = Transformer(
     input_dim=len(tokenizer),
@@ -277,7 +269,6 @@ criterion = nn.CrossEntropyLoss(ignore_index=-100)
 metric = BLEUScore().to(device)
 
 
-# %%
 def decode_batch(preds, labels):
 
     preds = preds.detach().cpu()
@@ -364,7 +355,6 @@ with torch.no_grad():
 
 bleu = metric.compute()
 print(f"BLEU = {bleu:.4f}")
-# %%
 
 
 def quick_test(sentence):

@@ -45,7 +45,6 @@ The focus of this portfolio is:
 
 ### 02. NLP & Transformers
 
-
 #### Transformers
 
 **From-Scratch Implementation**
@@ -87,10 +86,14 @@ The focus of this portfolio is:
 - Python, PyTorch, Hugging Face Transformers, Tensorflow
 - Scikit-learn, NumPy, Pandas, Matplotlib, OpenCV
 - Evaluation metrics: Accuracy, F1-score, ROC-AUC, BLEU
+- LangChain, ChromaDB, Google Gemini API, Tavily
+- asyncio, Dotenv
 
 ---
 
-## Notes
-- Some models are built from scratch, others use pretrained architectures
-- Each folder contains a README explaining the idea, approach, and results
-
+### 06. LLM Orchestration & RAG
+- **Autonomous Doc Assistant** – RAG system for crawling and querying technical documentation.
+- **Async Ingestion** – High-concurrency indexing using asyncio semaphores and ChromaDB.
+- **Web Crawling** – Automated site-to-vector pipeline using TavilyCrawl and RecursiveCharacterTextSplitter.
+- **Tool-Calling Agent** – Gemini 2.0 Flash Lite agent with strict retrieval-only system prompts and source attribution.
+- **History Management** – Custom filtering of ToolMessages to optimize context window for multi-turn chat.
