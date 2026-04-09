@@ -1,9 +1,9 @@
 import cv2
+import imageio
 import numpy as np
 import torch as pt
-from torchvision.models.detection import ssd300_vgg16, SSD300_VGG16_Weights
 import torchvision.transforms as T
-import imageio
+from torchvision.models.detection import SSD300_VGG16_Weights, ssd300_vgg16
 
 reader = imageio.get_reader(r"video_directory_link")
 writer = imageio.get_writer("output.mp4", fps=reader.get_meta_data()["fps"])

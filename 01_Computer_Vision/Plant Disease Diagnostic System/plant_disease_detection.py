@@ -1,18 +1,16 @@
-# %%
-import torch
-from torchvision.models.detection.faster_rcnn import (
-    fasterrcnn_mobilenet_v3_large_fpn,
-    MobileNet_V3_Large_Weights,
-)
-from torchvision.datasets import ImageFolder
-import torchvision.transforms as T
-from torch.utils.data import DataLoader, Dataset
-from glob import glob
 import os
-from PIL import Image
-from torchmetrics.detection.mean_ap import MeanAveragePrecision
+from glob import glob
 
-# %%
+import torch
+import torchvision.transforms as T
+from PIL import Image
+from torch.utils.data import DataLoader, Dataset
+from torchmetrics.detection.mean_ap import MeanAveragePrecision
+from torchvision.datasets import ImageFolder
+from torchvision.models.detection.faster_rcnn import (
+    MobileNet_V3_Large_Weights,
+    fasterrcnn_mobilenet_v3_large_fpn,
+)
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -87,8 +85,6 @@ test_dataloader = DataLoader(
 )
 
 
-# %%
-
 model = (
     fasterrcnn_mobilenet_v3_large_fpn(
         weights_backbone=MobileNet_V3_Large_Weights.DEFAULT,
@@ -98,9 +94,6 @@ model = (
     .train()
 )
 
-# for p in model.backbone.parameters():
-#     p.requires_grad = False
-
 
 optimizer = torch.optim.Adam(
     model.parameters(),
@@ -108,7 +101,6 @@ optimizer = torch.optim.Adam(
 )
 
 
-# %%
 metric = MeanAveragePrecision("xyxy")
 n_epochs = 20
 for e in range(n_epochs):
@@ -143,8 +135,5 @@ for e in range(n_epochs):
         f"Train Loss: {epoch_loss/len(tr_dataloader):.4f} | mAP: {mAP:.4f} | mAP@50: {mAP_50:.4f}"
     )
 
-
-
-# %%
 
 # torch.save(model.state_dict(), "weights.pth")

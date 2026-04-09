@@ -1,13 +1,14 @@
+import os
+
+import pandas as pd
 import torch
 import torch.nn as nn
-from torch.utils.data import DataLoader
-import pandas as pd
-from transformers import AutoTokenizer, PreTrainedTokenizer, DataCollatorForSeq2Seq
 from datasets import Dataset
-import os
-from tqdm import tqdm
+from torch.utils.data import DataLoader
 from torchmetrics.text import BLEUScore
-
+from tqdm import tqdm
+from transformers import (AutoTokenizer, DataCollatorForSeq2Seq,
+                          PreTrainedTokenizer)
 
 MAX_SEQ_LEN = 100
 
@@ -376,4 +377,4 @@ def quick_test(sentence):
     print("Output:", output_text.encode("utf-8", errors="replace").decode("utf-8"))
 
 
-quick_test("he went to it")
+quick_test("hello world")

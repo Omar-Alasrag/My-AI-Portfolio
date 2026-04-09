@@ -1,17 +1,9 @@
-# %%
-from transformers import (
-    pipeline,
-    AutoModelForTokenClassification,
-    AutoTokenizer,
-    DataCollatorForTokenClassification,
-    Trainer,
-    TrainingArguments,
-)
 import evaluate
 import numpy as np
-from datasets import load_dataset
-from datasets import DatasetDict
-
+from datasets import DatasetDict, load_dataset
+from transformers import (AutoModelForTokenClassification, AutoTokenizer,
+                          DataCollatorForTokenClassification, Trainer,
+                          TrainingArguments, pipeline)
 
 raw_dset = load_dataset("wiki")
 
@@ -74,10 +66,8 @@ tokenized_dataset = raw_dset.map(
 )
 
 
-# Load the metric
 metric = evaluate.load("seqeval")
 
-# Get the label names from the original dataset features
 label_list = raw_dset["train"].features["ner_tags"].feature.names
 
 
@@ -85,7 +75,6 @@ def compute_metrics(logits_and_labels):
     logits, labels = logits_and_labels
     predictions = np.argmax(logits, axis=-1)
 
-    # Remove ignored index (-100) and convert to string labels
     true_labels = [[label_list[l] for l in label if l != -100] for label in labels]
     true_predictions = [
         [label_list[p] for (p, l) in zip(prediction, label) if l != -100]

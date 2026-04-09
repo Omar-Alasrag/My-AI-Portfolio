@@ -1,15 +1,12 @@
 # Dataset:
 # https://www.kaggle.com/crowdflower/twitter-airline-sentiment
 
-from transformers import pipeline
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import torch
-
 from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
-
-
+from transformers import pipeline
 
 print("CUDA available:", torch.cuda.is_available())
 

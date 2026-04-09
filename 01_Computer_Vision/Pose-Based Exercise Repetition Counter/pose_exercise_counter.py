@@ -1,19 +1,14 @@
 import cv2
-import numpy as np
 import mediapipe as mp
+import numpy as np
 from mediapipe.tasks.python.core.base_options import BaseOptions
-from mediapipe.tasks.python.vision.core.vision_task_running_mode import (
-    VisionTaskRunningMode,
-)
-from mediapipe.tasks.python.vision.drawing_utils import draw_landmarks, DrawingSpec 
+from mediapipe.tasks.python.vision.core.vision_task_running_mode import \
+    VisionTaskRunningMode
+from mediapipe.tasks.python.vision.drawing_utils import (DrawingSpec,
+                                                         draw_landmarks)
 from mediapipe.tasks.python.vision.pose_landmarker import (
-    PoseLandmark,
-    PoseLandmarker,
-    PoseLandmarkerOptions,
-    PoseLandmarkerResult,
-    PoseLandmarksConnections
-    
-)
+    PoseLandmark, PoseLandmarker, PoseLandmarkerOptions, PoseLandmarkerResult,
+    PoseLandmarksConnections)
 
 
 def calc_angle(a, b, c):

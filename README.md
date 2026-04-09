@@ -9,7 +9,7 @@ The focus of this portfolio is:
 - Combining classical ML with modern deep learning and transformers
 
 ---
-    
+
 ## Skills & Topics Covered
 
 - **CNNs & Computer Vision** → CIFAR-10, SSD Object Detection, Face Recognition  

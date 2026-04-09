@@ -1,7 +1,7 @@
-from ultralytics.models import YOLO
-from ultralytics.engine.results import Results
-import numpy as np
 import cv2
+import numpy as np
+from ultralytics.engine.results import Results
+from ultralytics.models import YOLO
 
 model = YOLO("yolo26n.pt")
 

@@ -1,18 +1,13 @@
-# %%
 # Dataset: The MovieLens 1M dataset can be downloaded from
 # https://grouplens.org/datasets/movielens/1m/.
 # Place the files in the `data/` folder before running the scripts.
 
-import pandas as pd
 import numpy as np
+import pandas as pd
 import tensorflow as tf
 from tensorflow.keras import layers, models
 
-# import tensorflow as tf
-# from tensorflow.keras.layers import Input, Dense, Dropout
-# from tensorflow.keras.models import Model
 
-# Load data
 data_path = r"ml-1m\ratings.dat"
 df = pd.read_csv(data_path, sep="::")
 
@@ -37,7 +32,7 @@ autoencoder = tf.keras.Sequential(
         # Encoder
         layers.Dense(512, activation="relu", shape=(num_movies,)),
         layers.Dense(256, activation="relu"),
-        layers.Dense(128, activation="relu"),  # bottleneck
+        layers.Dense(128, activation="relu"),
         # Decoder
         layers.Dense(256, activation="relu"),
         layers.Dense(512, activation="relu"),
@@ -55,15 +50,8 @@ def masked_BCELoss(y_true, y_pred):
 
     bce = tf.keras.losses.binary_crossentropy(y_true, y_pred)
     return tf.reduce_sum(bce * mask) / (tf.reduce_sum(mask) + 1e-8)
-    
-autoencoder.compile(
-    optimizer="adam",
-    loss=masked_BCELoss
-)
-
-autoencoder.fit(
-    x, x,  epochs=40, batch_size=64, validation_split=0.2
-)   
 
 
-# %%
+autoencoder.compile(optimizer="adam", loss=masked_BCELoss)
+
+autoencoder.fit(x, x, epochs=40, batch_size=64, validation_split=0.2)

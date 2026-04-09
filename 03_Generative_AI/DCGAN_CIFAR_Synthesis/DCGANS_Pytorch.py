@@ -1,11 +1,11 @@
 import os
+
 import torch as pt
+import torchvision as tv
+import torchvision.transforms as T
+import torchvision.utils as vutils
 from torch.nn import BCELoss
 from torch.optim import Adam
-import torchvision as tv
-import torchvision.utils as vutils
-import torchvision.transforms as T
-
 
 transforms = T.Compose([T.Resize((64, 64)), T.ToTensor()])
 dset = tv.datasets.ImageFolder(r"cifar10/train", transforms)
@@ -44,7 +44,7 @@ class D(pt.nn.Module):
         super().__init__()
         self.main = pt.nn.Sequential(
             pt.nn.Conv2d(3, 64, 4, 2, 1),
-            pt.nn.LeakyReLU(0.2, True),  # Standard for Discriminators
+            pt.nn.LeakyReLU(0.2, True),
             pt.nn.Conv2d(64, 128, 4, 2, 1),
             pt.nn.BatchNorm2d(128),
             pt.nn.LeakyReLU(0.2, True),

@@ -31,7 +31,6 @@ class DocumentationIngestor:
         )
 
     async def _ingest_chunks_async(self, chunk_batches, max_concurrency=5):
-
         semaphore = asyncio.Semaphore(max_concurrency)
 
         async def safe_area(batch, batch_num):

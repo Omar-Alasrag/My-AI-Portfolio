@@ -1,22 +1,13 @@
-# %%
-import numpy as np
 import evaluate
-from datasets import load_dataset, Dataset
-from transformers import (
-    pipeline,
-    AutoTokenizer,
-    AutoModelForSeq2SeqLM,
-    DataCollatorForSeq2Seq,
-    Seq2SeqTrainingArguments,
-    Seq2SeqTrainer,
-    PreTrainedTokenizer,
-)
-
+import numpy as np
+from datasets import Dataset, load_dataset
+from transformers import (AutoModelForSeq2SeqLM, AutoTokenizer,
+                          DataCollatorForSeq2Seq, PreTrainedTokenizer,
+                          Seq2SeqTrainer, Seq2SeqTrainingArguments, pipeline)
 
 bleu = evaluate.load("sacrebleu")
 
 
-# dset = load_dataset("quickmt/quickmt-train.ar-en", split="train")
 
 
 streamed_dset = load_dataset(
@@ -28,11 +19,9 @@ dset = streamed_dset.take(1000)  # return iterable
 dset = Dataset.from_list(list(dset)).train_test_split(test_size=0.2)
 
 
-# %%
 
 checkpoint = "Helsinki-NLP/opus-mt-en-ar"
 
-# to get suggestions
 tokenizer: PreTrainedTokenizer = AutoTokenizer.from_pretrained(checkpoint)
 model = AutoModelForSeq2SeqLM.from_pretrained(checkpoint)
 data_collator = DataCollatorForSeq2Seq(tokenizer=tokenizer)
@@ -60,7 +49,6 @@ tokenized_dset = dset.map(
 def compute_metrics(logits_and_labels):
     pred, labels = logits_and_labels
 
-    # labels = np.where(labels != -100, labels, tokenizer.pad_token_type_id)
     labels = np.where(labels != -100, labels, tokenizer.pad_token_id)
     output = tokenizer.batch_decode(pred, skip_special_tokens=True)
     labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
@@ -100,7 +88,6 @@ trainer = Seq2SeqTrainer(
 
 
 trainer.train()
-# %%
 
 model = pipeline("translation", "translation_model/checkpoint-200")
 
@@ -108,4 +95,3 @@ model = pipeline("translation", "translation_model/checkpoint-200")
 model("fake")
 
 
-# %%

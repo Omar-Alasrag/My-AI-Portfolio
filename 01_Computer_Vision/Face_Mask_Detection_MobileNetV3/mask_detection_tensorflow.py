@@ -1,17 +1,14 @@
-# %%
+import keras as keras
 import keras.layers
 import keras.losses
 import keras.optimizers
+import matplotlib.pyplot as plt
 import tensorflow as tf
-import keras as keras
 from keras.applications.mobilenet_v3 import MobileNetV3Small, preprocess_input
 from keras.models import Model
 from keras.utils import image_dataset_from_directory
-import matplotlib.pyplot as plt
 from sklearn.metrics import f1_score, roc_auc_score
 
-
-# %%
 
 
 tr_dset, val_dset = image_dataset_from_directory(
@@ -27,9 +24,7 @@ val_dset = val_dset.map(lambda x, y: (preprocess_input(x), y)).prefetch(
 )
 
 
-# tr_dset : BatchDataset= tr_dset
 
-# %%
 
 base_model: Model = MobileNetV3Small((256, 256, 3), include_top=False)
 
@@ -54,19 +49,16 @@ for layer in base_model.layers:
 
 model.summary()
 
-# %%
 
 model.compile(
     keras.optimizers.Adam(),
     keras.losses.SparseCategoricalCrossentropy(),
     metrics=["acc"],
 )
-# %%
 
 n_epochs = 20
 r = model.fit(tr_dset, validation_data=val_dset, epochs=n_epochs)
 
-# %%
 val_dset = image_dataset_from_directory(
     "data\mask_dataset",
     subset="validation",
@@ -77,7 +69,6 @@ val_dset = image_dataset_from_directory(
 
 val_dset = val_dset.map(lambda x, y: (preprocess_input(x), y))
 
-# %%
 labels = tf.concat([y for x, y in val_dset], axis=0)
 
 predictions = model.predict(val_dset)
@@ -96,5 +87,4 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
-# %%
 

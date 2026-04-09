@@ -1,17 +1,13 @@
-import cv2
-import mediapipe as mp
 import math
 import time
 
-from mediapipe.tasks.python.vision.face_landmarker import (
-    FaceLandmarker,
-    FaceLandmarkerOptions,
-    FaceLandmarkerResult,
-)
+import cv2
+import mediapipe as mp
 from mediapipe.tasks.python.core.base_options import BaseOptions
-from mediapipe.tasks.python.vision.core.vision_task_running_mode import (
-    VisionTaskRunningMode,
-)
+from mediapipe.tasks.python.vision.core.vision_task_running_mode import \
+    VisionTaskRunningMode
+from mediapipe.tasks.python.vision.face_landmarker import (
+    FaceLandmarker, FaceLandmarkerOptions, FaceLandmarkerResult)
 
 latest_result = None
 

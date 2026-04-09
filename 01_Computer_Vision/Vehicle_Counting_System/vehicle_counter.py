@@ -1,5 +1,5 @@
-from tools.tracker import EuclideanDistTracker
 import cv2
+from tools.tracker import EuclideanDistTracker
 
 cap = cv2.VideoCapture("data/highway.mp4")
 tracker = EuclideanDistTracker()

@@ -1,14 +1,10 @@
-import tensorflow as tf
-from keras import Sequential
-from keras import layers
-from keras.utils import image_dataset_from_directory
-import matplotlib.pyplot as plt
 import os
-from tqdm import tqdm
 
+import matplotlib.pyplot as plt
 import tensorflow as tf
-
-
+from keras import Sequential, layers
+from keras.utils import image_dataset_from_directory
+from tqdm import tqdm
 
 scaler = layers.Rescaling(scale=1.0 / 127.5, offset=-1)
 

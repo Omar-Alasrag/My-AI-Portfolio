@@ -1,32 +1,12 @@
-# %%
-from ultralytics.models import YOLO
-from ultralytics.engine.trainer import DEFAULT_CFG
-from ultralytics.engine.results import Results
-
-import numpy as np
-import cv2
-import pytesseract
 from datetime import datetime
+import cv2
+import numpy as np
+import pytesseract
+from ultralytics.engine.results import Results
+from ultralytics.models import YOLO
 
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
-print(DEFAULT_CFG)
-
-
-def train():
-    model = YOLO("yolo26n.pt")
-    model.train(
-        data=r"data\license plate yolo dset\data.yaml",
-        epochs=50,
-        batch=8,
-        imgsz=640,
-        workers=0,
-        rect=True,
-        classes=[0],
-    )
-
-
-# train()
 
 model = YOLO("models/best.pt")
 
@@ -82,4 +62,4 @@ while cap.isOpened():
 cap.release()
 cv2.destroyAllWindows()
 
-# %%
+

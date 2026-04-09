@@ -1,7 +1,8 @@
 import numpy as np
 from datasets import load_dataset
-from sklearn.metrics import f1_score, accuracy_score
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, AutoConfig, TrainingArguments, Trainer
+from sklearn.metrics import accuracy_score, f1_score
+from transformers import (AutoConfig, AutoModelForSequenceClassification,
+                          AutoTokenizer, Trainer, TrainingArguments)
 
 raw_dset = load_dataset("glue", "rte")
 
