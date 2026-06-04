@@ -1,0 +1,5 @@
+outs:
+- md5: 2e56a6797b83350700b033e9da92c0b1
+  size: 47107
+  hash: md5
+  path: credit_approval.csv

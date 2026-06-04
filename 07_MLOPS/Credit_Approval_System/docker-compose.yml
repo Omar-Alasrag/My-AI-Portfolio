@@ -1,0 +1,18 @@
+services:
+  myapp:
+    build: .
+    image: myapp
+    ports:
+      - 8000:8000
+    container_name: myapp
+    environment:
+      - MONGO_USERNAME=${MONGO_USERNAME}
+      - MONGO_PASSWORD=${MONGO_PASSWORD}
+      - MLFLOW_TRACKING_USERNAME=${MLFLOW_TRACKING_USERNAME}
+      - MLFLOW_TRACKING_PASSWORD=${MLFLOW_TRACKING_PASSWORD}
+      - DAGSHUB_USER_TOKEN=${DAGSHUB_USER_TOKEN}
+    volumes:
+      - artifacts_img:/app/artifacts
+
+volumes:
+  artifacts_img:

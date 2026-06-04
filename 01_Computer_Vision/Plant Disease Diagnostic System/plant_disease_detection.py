@@ -12,7 +12,6 @@ from torchvision.models.detection.faster_rcnn import (
     fasterrcnn_mobilenet_v3_large_fpn,
 )
 
-
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
