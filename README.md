@@ -1,99 +1,58 @@
-# AI & Machine Learning Portfolio
-
-This repository contains a collection of my AI, machine learning, and deep learning projects** that I built
-
-The focus of this portfolio is:
-- Understanding models from first principles
-- Implementing ideas correctly
-- Comparing different algorithms using evaluation metrics
-- Combining classical ML with modern deep learning and transformers
-
----
-
-## Skills & Topics Covered
-
-- **CNNs & Computer Vision** → CIFAR-10, SSD Object Detection, Face Recognition  
-- **Transformers (from scratch)** → Custom Transformer Seq2Seq (PyTorch)  
-- **NLP Fine-tuning** → NER, Textual Entailment (RTE), Sentiment Analysis, Translation  
-- **Classical ML** → Regression, Classification, Clustering, Association Rules  
-- **Optimization & Evaluation** → Grid Search, K-Fold, ROC-AUC, BLEU  
-
----
-
-## Project Overview
-
 ### 01. Computer Vision
-#### Deep Learning & Real-Time Applications
-- **Real-Time Vehicle Counting using YOLO and ByteTrack** – Multi-object tracking for real-time traffic monitoring.
-- **Automatic License Plate Recognition (ALPR) System** – YOLO-based detection + OCR text extraction.
-- **Real-Time Vehicle Counting using YOLO and ByteTrack** – Multi-object tracking for real-time traffic monitoring.
-- **Automatic License Plate Recognition (ALPR) System** – YOLO-based detection + OCR text extraction
-- **Plant Disease Diagnostic System** – Real-time Detection with Faster R-CNN / SSDLite
-- **Face Mask Detection using MobileNetV3** – Transfer learning for real-time mask classification.
-- **CIFAR-10 CNN Image Classifier with Data Augmentation** – Multi-class image classification using CNNs.
-- **SSD Object Detection** – Single Shot Detector for general object detection tasks.
-#### Face & Pose Estimation
-- **Face Recognition using OpenCV** – Face identification and verification using classical feature extraction.
-- **Face Distance Estimation using Facial Landmarks** – Distance measurement between facial keypoints.
-- **Pose-Based Exercise Repetition Counter** – Keypoint detection to count exercise repetitions.
-#### Classical Computer Vision / Feature Engineering
-- **Feature Matching: ORB vs SIFT** – Comparing classical feature detectors for image matching.
-- **Motion Detection using Frame Differencing** – Real-time motion tracking in video frames.
-- **Vehicle Counting System** – Counting vehicles using classical CV approaches.
+
+* [Real-Time Vehicle Counting using YOLO and ByteTrack](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/01_Computer_Vision/Real-Time%20Vehicle%20Counting%20using%20YOLO%20and%20ByteTrack)
+* [Automatic License Plate Recognition (ALPR) System](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/01_Computer_Vision/Automatic%20License%20Plate%20Recognition%20(ALPR)%20System)
+* [Plant Disease Diagnostic System](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/01_Computer_Vision/Plant%20Disease%20Diagnostic%20System)
+* [Face Mask Detection using MobileNetV3](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/01_Computer_Vision/Face_Mask_Detection_MobileNetV3)
+* [CIFAR-10 CNN Image Classifier](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/01_Computer_Vision/CIFAR10_CNN_Augmentation)
+* [SSD Object Detection](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/01_Computer_Vision/SSD_Object_Detection)
+* [Face Recognition using OpenCV](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/01_Computer_Vision/Face_Recognition_OpenCV)
+* [Face Distance Estimation](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/01_Computer_Vision/Face%20Distance%20Estimation%20using%20Facial%20Landmarks)
+* [Pose-Based Exercise Counter](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/01_Computer_Vision/Pose-Based%20Exercise%20Repetition%20Counter)
+* [Feature Matching: ORB vs SIFT](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/01_Computer_Vision/Feature_Matching_ORB_vs_SIFT)
+* [Motion Detection (Frame Differencing)](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/01_Computer_Vision/Motion_Detection_Frame_Differencing)
+* [Vehicle Counting System](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/01_Computer_Vision/Vehicle_Counting_System)
 
 ---
 
 ### 02. NLP & Transformers
 
-#### Transformers
-
-**From-Scratch Implementation**
-- Custom Transformer Seq2Seq model including:
-  - Multi-Head Attention
-  - Positional Encoding
-  - Padding and causal masking
-  - Residual connections and layer normalization
-
-**Fine-Tuned Transformer Models**
-- Named Entity Recognition (DistilBERT)
-- Textual Entailment on GLUE (RTE)
-- Neural Machine Translation evaluated with BLEU
-- Twitter sentiment analysis evaluated with F1-score and ROC-AUC
+* [Custom Transformer Seq2Seq](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/02_NLP%20&%20Transformers/Custom_Transformer_Model_From_Scratch)
+* [Named Entity Recognition](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/02_NLP%20&%20Transformers/Named%20Entity%20Recognotion)
+* [Textual Entailment (RTE)](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/02_NLP%20&%20Transformers/Textual_Entailment_Classification)
+* [Neural Machine Translation](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/02_NLP%20&%20Transformers/Machine%20Translation)
+* [Twitter Sentiment Analysis](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/02_NLP%20&%20Transformers/twitter-sentiment-analysis-transformers)
 
 ---
 
 ### 03. Generative AI
-- DCGAN trained on CIFAR-10 for image generation with Pytorch & Tensorflow
+
+* [DCGAN CIFAR-10 Synthesis](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/03_Generative_AI/DCGAN_CIFAR_Synthesis)
 
 ---
 
 ### 04. Recommender Systems
-- AutoEncoder-based collaborative filtering using MovieLens data
+
+* [MovieLens AutoEncoders](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/04_Recommender_Systems/MovieLens_AutoEncoders)
 
 ---
 
 ### 05. Predictive Analytics & Classical ML
-- Regression and classification model comparisons
-- Customer segmentation using clustering techniques
-- Market basket analysis with Apriori
-- Thompson Sampling for ad selection optimization
-- Hyperparameter tuning with Grid Search and K-Fold cross-validation
-- ANN-based customer churn prediction
 
----
-
-## Tools & Libraries
-- Python, PyTorch, Hugging Face Transformers, Tensorflow
-- Scikit-learn, NumPy, Pandas, Matplotlib, OpenCV
-- Evaluation metrics: Accuracy, F1-score, ROC-AUC, BLEU
-- LangChain, ChromaDB, Google Gemini API, Tavily
-- asyncio, Dotenv
+* [Classical ML Toolbox](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/05_Predictive_Analytics/Classical_ML_Toolbox)
+* [Customer Churn ANN](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/05_Predictive_Analytics/Customer_Churn_ANN)
 
 ---
 
 ### 06. LLM Orchestration & RAG
-- **Autonomous Doc Assistant** – RAG system for crawling and querying technical documentation.
-- **Async Ingestion** – High-concurrency indexing using asyncio semaphores and ChromaDB.
-- **Web Crawling** – Automated site-to-vector pipeline using TavilyCrawl and RecursiveCharacterTextSplitter.
-- **Tool-Calling Agent** – Gemini 2.0 Flash Lite agent with strict retrieval-only system prompts and source attribution.
-- **History Management** – Custom filtering of ToolMessages to optimize context window for multi-turn chat.
+
+* [Documentation Assistant (RAG)](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/06_LangChain&LangGraph/Documentation_Assistant)
+* [Reflextion Agent](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/06_LangChain&LangGraph/Reflextion_Agent)
+
+---
+
+### 07. MLOps
+
+* [Credit Approval MLOps System](https://github.com/Omar-Alasrag/My-AI-Portfolio/tree/main/07_MLOPS/Credit_Approval_System)
+
+---
